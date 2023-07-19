@@ -1,0 +1,20 @@
+<div class="signInPage">
+  <div class="sigInContainer">
+    <div class="signInWrapper">
+      <div class="headerWrapper">
+        Sign in to your dashboard
+      </div>
+      <div class="formWrapper">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="form-group">
+            <input type="email" class="form-control" id="emailInput" placeholder="Username" formControlName="email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="passwordInput" placeholder="Password" formControlName="password">
+          </div>
+          <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

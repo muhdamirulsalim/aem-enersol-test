@@ -1,0 +1,78 @@
+<div class="dashboardPage">
+    <div class="dashboardHeader">
+        <div class="container-fluid container-md">
+            <div class="row align-items-center">
+                <div class="col-6">
+                    Dashboard
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <a href="#" (click)="signOut()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                        <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                      </svg>
+                      Sign Out
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dashboardContent">
+        <div class="container-fluid container-md">
+            <div class="dashboardCharts row">
+                <div class="dashboardSubHeader">Overview</div>
+                <div class="dashboardDataWrapper col-12 col-md-6">
+                    <!-- PieChart -->
+                    <div class="dashboardData">
+                        <div class="dashboardDataHeader">
+                            Card Title
+                        </div>
+                        <div class="dashboardChart">
+                            <div id="chartdiv" style="width: 100%; height: 300px"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboardDataWrapper col-12 col-md-6">
+                    <!-- Barchart -->
+                    <div class="dashboardData">
+                        <div class="dashboardDataHeader">
+                            Card Title
+                        </div>
+                        <div class="dashboardChart">
+                            <div id="chartdiv2" style="width: 100%; height: 300px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboardUsers">
+                <div class="dashboardSubHeader">Users List</div>
+                <!-- Table -->
+                <div class="table-container">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    <!-- Define columns -->
+                    <ng-container matColumnDef="firstName">
+                        <th mat-header-cell *matHeaderCellDef>First Name</th>
+                        <td mat-cell *matCellDef="let user">{{ user.firstName }}</td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="lastName">
+                        <th mat-header-cell *matHeaderCellDef>Last Name</th>
+                        <td mat-cell *matCellDef="let user">{{ user.lastName }}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="username">
+                        <th mat-header-cell *matHeaderCellDef>Username</th>
+                        <td mat-cell *matCellDef="let user">@{{ user.username }}</td>
+                    </ng-container>
+                
+                    <!-- Add more columns as needed -->
+                
+                    <!-- Display table rows -->
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let user; columns: displayedColumns;"></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
